@@ -1,13 +1,19 @@
-vim.keymap.set('n', '[b', '<cmd>bp<CR>')
-vim.keymap.set('n', ']b', '<cmd>bn<CR>')
+vim.keymap.set('n', '[b', '<cmd>bp<CR>', { desc = 'Previous [b]uffer' })
+vim.keymap.set('n', ']b', '<cmd>bn<CR>', { desc = 'Next [b]uffer' })
 
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers['signature_help'], {
   border = 'single',
   close_events = { 'CursorMoved', 'BufHidden' },
 })
-vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help)
+vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, { desc = 'Show function signature' })
 
-vim.keymap.set('n', '<leader>pv', '<cmd>Neotree position=current<CR>')
+vim.keymap.set('n', '<leader>pv', '<cmd>Neotree position=current<CR>', { desc = '[P]roject [V]iew' })
+
+vim.keymap.set('n', '<leader>ot', '<cmd>FloatermNew<CR>', { desc = '[O]pen [t]erminal' })
+
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = false
 
 -- Automatically open NeoTree
 -- vim.api.nvim_create_augroup('neotree_autoopen', { clear = true })

@@ -85,7 +85,7 @@ return {
     'voldikss/vim-floaterm',
     config = function()
       -- Add lazygit in floating window
-      vim.keymap.set('n', '<leader>gg', '<cmd>FloatermNew lazygit<CR>')
+      vim.keymap.set('n', '<leader>og', '<cmd>FloatermNew lazygit<CR>', { desc = '[O]pen lazy[g]it' })
     end,
   },
   require 'custom.keybinds',
