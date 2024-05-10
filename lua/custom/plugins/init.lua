@@ -2,16 +2,6 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-
-vim.keymap.set('n', '[b', '<cmd>bp<CR>')
-vim.keymap.set('n', ']b', '<cmd>bn<CR>')
-
-vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers['signature_help'], {
-  border = 'single',
-  close_events = { 'CursorMoved', 'BufHidden' },
-})
-vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help)
-
 return {
   -- Autoclose brackets / quotes / etc
   -- { 'm4xshen/autoclose.nvim', opts = {} },
@@ -91,4 +81,12 @@ return {
       alpha.setup(dashboard.opts)
     end,
   },
+  {
+    'voldikss/vim-floaterm',
+    config = function()
+      -- Add lazygit in floating window
+      vim.keymap.set('n', '<leader>gg', '<cmd>FloatermNew lazygit<CR>')
+    end,
+  },
+  require 'custom.keybinds',
 }
