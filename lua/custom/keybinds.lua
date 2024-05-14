@@ -1,16 +1,20 @@
+-- Buffer keybinds
 vim.keymap.set('n', '[b', '<cmd>bp<CR>', { desc = 'Previous [b]uffer' })
 vim.keymap.set('n', ']b', '<cmd>bn<CR>', { desc = 'Next [b]uffer' })
 
+-- Neotree keybinds
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers['signature_help'], {
   border = 'single',
   close_events = { 'CursorMoved', 'BufHidden' },
 })
 vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, { desc = 'Show function signature' })
-
 vim.keymap.set('n', '<leader>pv', '<cmd>Neotree position=current<CR>', { desc = '[P]roject [V]iew' })
 
+-- Terminal keybinds
 vim.keymap.set('n', '<leader>ot', '<cmd>FloatermNew<CR>', { desc = '[O]pen [t]erminal' })
+vim.keymap.set('n', '<C-\\>', '<cmd>FloatermToggle<CR>', { desc = 'Toggle terminal' })
 
+-- Default tabstops
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = false
