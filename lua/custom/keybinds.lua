@@ -13,6 +13,8 @@ vim.keymap.set('n', '<leader>pv', '<cmd>Neotree position=current<CR>', { desc = 
 -- Terminal keybinds
 vim.keymap.set('n', '<leader>ot', '<cmd>FloatermNew<CR>', { desc = '[O]pen [t]erminal' })
 vim.keymap.set('n', '<C-\\>', '<cmd>FloatermToggle<CR>', { desc = 'Toggle terminal' })
+vim.keymap.set('n', '<leader>fn', '<cmd>FloatermNext<CR>', { desc = '[F]loaterm [n]ext' })
+vim.keymap.set('n', '<leader>fp', '<cmd>FloatermPrev<CR>', { desc = '[F]loaterm [p]revious' })
 
 -- Default tabstops
 vim.opt.tabstop = 4
